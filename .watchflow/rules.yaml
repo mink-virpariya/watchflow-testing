@@ -16,3 +16,12 @@ rules:
     event_types: [pull_request]
     parameters:
       required_checks: ["ci/test", "lint"]
+
+  - id: pr-approval-required
+    name: PR Approval Required
+    description: All pull requests must have a min num of approvals unless the author is a maintainer
+    enabled: true
+    severity: high
+    event_types: [pull_request]
+    parameters:
+      min_approvals: 2
